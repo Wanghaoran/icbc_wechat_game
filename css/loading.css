@@ -1,0 +1,35 @@
+/*loading*/
+@keyframes kf-loading{
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes kf-loading{
+	from{
+		-webkit-transform: rotate(0deg);
+	}
+	to{
+		-webkit-transform: rotate(360deg);
+	}
+}
+@-moz-keyframes kf-loading{
+	from{
+		-moz-transform: rotate(0deg);
+	}
+	to{
+		-moz-transform: rotate(360deg);
+	}
+}
+
+.ani-loading{
+	-webkit-animation: kf-loading 1s infinite;
+	-moz-animation: kf-loading 1s infinite;
+	animation: ks-loading 1s infinite;
+
+	-webkit-animation-timing-function: linear;
+	-moz-animation-timing-function: linear;
+	animation-timing-function: linear;
+}

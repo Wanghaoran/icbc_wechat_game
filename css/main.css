@@ -1,0 +1,128 @@
+@keyframes kf-text{
+	from{
+		color: #f00;
+	}
+	50%{
+		color: #00f;
+	}
+	to{
+		color: #f00;
+	}
+}
+@-webkit-keyframes kf-text{
+	from{
+		color: #f00;
+	}
+	50%{
+		color: #00f;
+	}
+	to{
+		color: #f00;
+	}
+}
+@-moz-keyframes kf-text{
+	from{
+		color: #f00;
+	}
+	50%{
+		color: #00f;
+	}
+	to{
+		color: #f00;
+	}
+}
+
+.ani-text{
+	-webkit-animation: kf-text 2s infinite;
+	-moz-animation: kf-text 2s infinite;
+	-animation: kf-text 2s infinite;
+}
+
+#loadingView div{
+	overflow: hidden;
+}
+
+#loadingView {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#loadingImage{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	background: url(../res/logo.png) no-repeat center center;
+	overflow: hidden;
+}
+
+#loadingText-container{
+	position: absolute;
+	left: 0%;
+	top: 55%;
+	width: 100%;
+	height: 20%;
+	overflow: hidden;
+	font-size: 1em;
+	color: #fff;
+}
+
+#shareGuide{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.9;
+
+	background: url(../res/shareguide.png) no-repeat right top;
+	background-size: 100% auto;
+	display: none;
+}
+
+#portraitTip{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	display: none;
+}
+#portraitImage{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	background: url(../res/heng.jpg) no-repeat center center;
+}
+
+
+/*loading*/
+#fishGame-loading{
+	background-color: #000;
+	opacity: 0.8;
+	z-index: 99999;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+#loading{
+	position: absolute;
+	left: 30%;
+	top: 30%;
+	width: 40%;
+	height: 40%;
+	background: url(../res/loading.gif) no-repeat center center;
+}

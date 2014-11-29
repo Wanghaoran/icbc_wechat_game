@@ -1,0 +1,35 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 1,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules" : ["cocos2d", "extensions"],
+
+    "jsList" : [
+        "src/resource.js",
+        "src/app.js",
+        "src/lib/fishGame.js",
+        "src/lib/cocos.js",
+
+        "src/lib/views/IBake.js",
+        "src/lib/views/BaseView.js",
+        "src/lib/ViewManager.js",
+
+        "src/stuffs/Stuff.js",
+
+        "src/scenes/MainScene.js",
+        
+        "src/views/Bubble.js",
+        "src/views/StartView.js",
+        "src/views/GameView.js",
+        "src/views/PopupView.js",
+        "src/views/ResultView.js",
+        "src/views/ArenaView.js",
+        "src/views/InfoView.js"
+    ]
+}
