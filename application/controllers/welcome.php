@@ -6,22 +6,32 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-
-        /*
         $this->load->helper('url');
+
         if(empty($_GET['code'])){
-            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4b9a0bd3865f2332&redirect_uri=' . urlencode('http://nokia.cnhtk.cn/xiaona') . '&response_type=code&scope=snsapi_userinfo&state=index#wechat_redirect';
+            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx305444f09047bca0&redirect_uri=' . urlencode('http://182.92.64.207/icbc_wechat_game/') . '&response_type=code&scope=snsapi_userinfo&state=index#wechat_redirect';
             redirect($token_url);
         }
 
-
-        $token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx4b9a0bd3865f2332&secret=8359e84e67ca7138aa1342d23f32eb00&code=' . $_GET['code'] . '&grant_type=authorization_code';
+        $token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx305444f09047bca0&secret=5e1acad864a281a42df738ebad913c52&code=' . $_GET['code'] . '&grant_type=authorization_code';
         $result_json = file_get_contents($token_url);
         $result_arr = json_decode($result_json, true);
         if(!empty($result_arr['errcode'])){
 //            die('Authorization failure!' .  $result_arr['errmsg'] . '</h1>');
-            redirect('http://182.92.64.207/xiaona/');
+            redirect('http://182.92.64.207/icbc_wechat_game/');
         }
+
+        echo '<pre>';
+        var_dump($result_arr);
+        echo '</pre>';
+
+
+        /*
+
+
+
+
+
 
         $this -> load -> model('quan_model');
 
@@ -47,7 +57,7 @@ class Welcome extends CI_Controller {
 
 
         */
-        $this->load->view('welcome');
+//        $this->load->view('welcome');
 	}
 
 
