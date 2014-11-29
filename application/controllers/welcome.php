@@ -9,7 +9,7 @@ class Welcome extends CI_Controller {
         $this->load->helper('url');
 
         if(empty($_GET['code'])){
-            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx305444f09047bca0&redirect_uri=' . urlencode('http://182.92.64.207/icbc_wechat_game/') . '&response_type=code&scope=snsapi_userinfo&state=index#wechat_redirect';
+            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx305444f09047bca0&redirect_uri=' . urlencode('http://182.92.64.207/icbc_wechat_game/') . '&response_type=code&scope=snsapi_base&state=index#wechat_redirect';
             redirect($token_url);
         }
 
