@@ -4,7 +4,10 @@ class Welcome extends CI_Controller {
 
 
     public function logincheck(){
-
+        echo '<pre>';
+        var_dump($_POST);
+        var_dump($_GET);
+        echo '</pre>';
     }
 
 
