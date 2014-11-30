@@ -3,28 +3,46 @@
 class Welcome extends CI_Controller {
 
 
+    public function logincheck(){
+
+    }
+
 
 	public function index()
 	{
+
+        //生成跳转URL
+        $callback_url = 'http://icbc.cnhtk.cn/logincheck';
+        $scope = 'snsapi_userinfo';
+        $state = 'index';
+        $encode = '';
+        $ts = time();
+        $signature = $this -> signature(array(
+            'nineteen@partner',
+            'nineteen',
+            $scope,
+            $state,
+            $callback_url,
+            $encode,
+            $ts
+        ));
+
+        $form = array(
+            'app_key' => 'nineteen',
+            'scope' => $scope,
+            'state' => $state,
+            'redirect' => $callback_url,
+            'encode' => $encode,
+            'ts' => $ts,
+            'signature' => $signature,
+        );
+
+        $qs = http_build_query($form);
+        $token_url = 'https://oauth.izhida.cn/oauth_v2?' . $qs;
+
         $this->load->helper('url');
 
-        if(empty($_GET['code'])){
-            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx305444f09047bca0&redirect_uri=' . urlencode('http://icbc.cnhtk.cn/') . '&response_type=code&scope=snsapi_userinfo&state=index#wechat_redirect';
-            redirect($token_url);
-        }
-
-        $token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx305444f09047bca0&secret=5e1acad864a281a42df738ebad913c52&code=' . $_GET['code'] . '&grant_type=authorization_code';
-        $result_json = file_get_contents($token_url);
-        $result_arr = json_decode($result_json, true);
-        if(!empty($result_arr['errcode'])){
-//            die('Authorization failure!' .  $result_arr['errmsg'] . '</h1>');
-            redirect('http://182.92.64.207/icbc_wechat_game/');
-        }
-
-        echo '<pre>';
-        var_dump($result_arr);
-        echo '</pre>';
-
+        redirect($token_url);
 
         /*
 
@@ -59,6 +77,15 @@ class Welcome extends CI_Controller {
         */
 //        $this->load->view('welcome');
 	}
+
+
+    public function signature($arr)
+    {
+        sort($arr, SORT_STRING);
+        $tmpStr = implode($arr);
+        $tmpStr = sha1($tmpStr);
+        return $tmpStr;
+    }
 
 
 }
